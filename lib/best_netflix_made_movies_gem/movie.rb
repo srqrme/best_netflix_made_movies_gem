@@ -13,4 +13,10 @@ class BestNetflixMadeMoviesGem::Movie
     @@all << self
   end
 
+  def self.create_from_scraped_movies_index
+    BestNetflixMadeMoviesGem::Scraper.scrape_movies_index.each do |movie|
+      self.new(movie)
+    end
+  end
+
 end
