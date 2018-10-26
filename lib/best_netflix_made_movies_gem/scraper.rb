@@ -17,4 +17,7 @@ class BestNetflixMadeMoviesGem::Scraper
     movies
   end
 
+  def self.scrape_profile_of_movie(movie_object)
+    movie_profile_doc = Nokogiri::HTML(open(movie_object.movie_url))
+  end
 end

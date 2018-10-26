@@ -43,5 +43,7 @@ class BestNetflixMadeMoviesGem::CLI
     puts ""
 
     input = gets.strip.to_i
+
+    movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
   end
 end
