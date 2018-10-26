@@ -21,5 +21,20 @@ class BestNetflixMadeMoviesGem::Scraper
     movie_profile_doc = Nokogiri::HTML(open(movie_object.movie_url))
     movie_profile_info = movie_profile_doc.css("#mainColumn")
       movie_object.audience_score = movie_profile_info.css(".meter-value .superPageFontColor").text
+      movie_object.avg_audience_rating = movie_profile_info.css(".audience-info div[1]/text()").text.chomp.strip
+  end
+
+  def self.details(movie_object)
+    if movie_object.audience_score == "" || movie_object.avg_audience_rating == ""
+      puts "#{movie_object.title.upcase}"
+      puts ""
+      puts "Audience Score: NA"
+      puts "Average Audience Rating: N/A"
+    else
+      puts "#{movie_object.title.upcase}"
+      puts ""
+      puts "Audience Score: #{movie_object.audience_score}"
+      puts "Average Audience Rating: #{movie_object.avg_audience_rating}"
+    end
   end
 end
