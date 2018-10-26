@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/best_netflix_made_movies_gem'
+
+#Instantiates CLI class and calls #start to start up the program
+BestNetflixMadeMoviesGem::CLI.new.start
