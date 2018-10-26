@@ -23,6 +23,11 @@ class BestNetflixMadeMoviesGem::Scraper
       movie_object.avg_critic_rating = movie_profile_info.css("#scoreStats div.superPageFontColor").first.text.gsub(/[^0-9\.\/]+[\s]/, ' ').strip
       movie_object.avg_audience_rating = movie_profile_info.css(".audience-info div[1]/text()").text.chomp.strip
       movie_object.audience_score = movie_profile_info.css(".meter-value .superPageFontColor").text
+      movie_object.synopsis = movie_profile_info.css("#movieSynopsis").text.strip
+      movie_object.rating = movie_profile_info.css("ul li:first-child meta-value").text.strip
+      movie_object.genre = movie_profile_info.css("ul li[2] .meta-value a").first.text.chomp.strip
+      movie_object.director = movie_profile_info.css("ul li[3] .meta-value a").text.strip
+      movie_object.cast = movie_profile_info.css(".cast-item.media.inlineBlock .media-body a span").text.chomp
   end
 
   def self.details(movie_object)
