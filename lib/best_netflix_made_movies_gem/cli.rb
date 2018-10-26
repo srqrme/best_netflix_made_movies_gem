@@ -26,6 +26,7 @@ class BestNetflixMadeMoviesGem::CLI
       puts ""
       list_movies
       puts ""
+      run
     end
   end
 
@@ -34,5 +35,13 @@ class BestNetflixMadeMoviesGem::CLI
     BestNetflixMadeMoviesGem::Movie.all.each do |movie|
       puts "#{movie.rank}   #{movie.title}"
     end
+  end
+
+  def run
+    puts ""
+    puts "Please enter the rank number of a movie you'd like more information on:"
+    puts ""
+
+    input = gets.strip.to_i
   end
 end

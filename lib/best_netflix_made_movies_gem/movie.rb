@@ -22,4 +22,8 @@ class BestNetflixMadeMoviesGem::Movie
   def self.all
     @@all
   end
+
+  def self.find(m)
+    self.all[m-1]
+  end
 end
