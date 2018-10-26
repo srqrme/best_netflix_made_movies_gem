@@ -2,7 +2,7 @@ require 'pry'
 
 class BestNetflixMadeMoviesGem::Movie
 
-  attr_accessor :title, :rank, :movie_url
+  attr_accessor :title, :rank, :movie_url, :audience_score
 
   @@all = []
 
