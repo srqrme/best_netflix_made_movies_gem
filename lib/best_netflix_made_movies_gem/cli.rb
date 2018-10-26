@@ -28,4 +28,11 @@ class BestNetflixMadeMoviesGem::CLI
       puts ""
     end
   end
+
+  def list_movies
+    BestNetflixMadeMoviesGem::Movie.create_from_scraped_movies_index
+    BestNetflixMadeMoviesGem::Movie.all.each do |movie|
+      puts "#{movie.rank}   #{movie.title}"
+    end
+  end
 end
