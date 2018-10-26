@@ -45,5 +45,7 @@ class BestNetflixMadeMoviesGem::CLI
     input = gets.strip.to_i
 
     movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
+    BestNetflixMadeMoviesGem::Scraper.scrape_profile_of_movie(movie_object)
+    BestNetflixMadeMoviesGem::Scraper.details(movie_object)
   end
 end
