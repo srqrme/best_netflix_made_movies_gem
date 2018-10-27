@@ -14,6 +14,7 @@ class BestNetflixMadeMoviesGem::CLI
   def menu
     puts ""
     puts "What would you like to do? You can:"
+    puts ""
     puts "Enter '1' if you'd like to see Rotten Tomatoes' current list of the best movies made by Netflix, or"
     puts "Enter '2' to leave the Best Netflix Made Movies Gem"
     puts ""
@@ -45,7 +46,33 @@ class BestNetflixMadeMoviesGem::CLI
     input = gets.strip.to_i
 
     movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
+
     BestNetflixMadeMoviesGem::Scraper.scrape_profile_of_movie(movie_object)
+
     BestNetflixMadeMoviesGem::Scraper.details(movie_object)
+
+    view_another
+  end
+
+  def view_another
+    puts ""
+    puts "Would you like to see the details of another movie? Enter "Y" or "N""
+    puts ""
+
+    input = gets.chomp
+
+    if input == "y" || input == "Y"
+      run
+    elsif input == "n" || input == "N"
+      quit
+    else
+      puts "I'm not sure I understand."
+      view_another
+    end
+  end
+
+  def quit
+    puts ""
+    puts "Thanks for using Best Netflix Made Movies Gem, have a nice day!"
   end
 end
