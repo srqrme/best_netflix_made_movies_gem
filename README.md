@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: After installing 'best_netflix_made_movies_gem', type './bin/BestNetflixMadeMovies' into the terminal to get the program started.
 
 ## Development
 
