@@ -27,7 +27,7 @@ class BestNetflixMadeMoviesGem::Scraper
       movie_object.rating = movie_profile_info.css("ul.content-meta.info li.meta-row.clearfix:first-child div.meta-value").text.strip
       movie_object.genre = movie_profile_info.css("ul li[2] .meta-value a").first.text.chomp.strip
       movie_object.director = movie_profile_info.css("ul li[3] .meta-value a").text.strip
-      movie_object.cast = movie_profile_info.css(".cast-item.media.inlineBlock .media-body a span").text.chomp.strip
+      movie_object.cast = movie_profile_info.css(".cast-item.media.inlineBlock .media-body a span").text.strip.gsub(/[\n ]+[A Z]/, ", ")
   end
 
   def self.details(movie_object)
