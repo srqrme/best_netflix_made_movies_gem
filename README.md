@@ -1,8 +1,6 @@
 # BestNetflixMadeMoviesGem
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/best_netflix_made_movies_gem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to BestNetflixMadeMoviesGem! This program scrapes data from a Rotten Tomatoes editorial page (https://editorial.rottentomatoes.com/guide/best-netflix-movies-to-watch-right-now/) and outputs a current list of the best movies made by Netflix. After viewing the full list, you can then choose a particular movie to find out more of its details.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: After installing 'best_netflix_made_movies_gem', type './bin/BestNetflixMadeMovies' into the terminal to get the program started.
+After installing 'best_netflix_made_movies_gem', type './bin/BestNetflixMadeMovies' into the terminal to get the program started.
 
 ## Development
 
