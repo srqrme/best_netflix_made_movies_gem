@@ -8,7 +8,7 @@ class BestNetflixMadeMoviesGem::CLI
     puts "Hello and Welcome to the Best Netflix Made Movies Gem:"
     puts "A guide to the best Netflix made movies according to Rotten Tomatoes"
     puts ""
-
+    BestNetflixMadeMoviesGem::Movie.create_from_scraped_movies_index
     menu
   end
 
@@ -34,7 +34,6 @@ class BestNetflixMadeMoviesGem::CLI
   end
 
   def list_movies
-    BestNetflixMadeMoviesGem::Movie.create_from_scraped_movies_index
     BestNetflixMadeMoviesGem::Movie.all.each do |movie|
       puts "#{movie.rank}   #{movie.title}"
     end
