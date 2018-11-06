@@ -18,14 +18,14 @@ class BestNetflixMadeMoviesGem::CLI
 
     input = gets.strip
 
-    if input == "Y" || input == "y"
+    if input == "y" || "Y"
       puts ""
       puts "Here are the top Netflix Original movies, listed in rank order:"
       puts ""
       list_movies
       puts ""
       run
-    elsif input == "N" || input == "n"
+    elsif input == "n" || "N"
       quit
     else
       puts "I'm not sure I understand."
@@ -64,9 +64,9 @@ class BestNetflixMadeMoviesGem::CLI
 
     input = gets.chomp
 
-    if input == "y" || input == "Y"
+    if input == "y" || "Y"
       run
-    elsif input == "n" || input == "N"
+    elsif input == "n" || "N"
       quit
     else
       puts "I'm not sure I understand."
