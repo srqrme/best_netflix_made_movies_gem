@@ -46,12 +46,14 @@ class BestNetflixMadeMoviesGem::CLI
 
     input = gets.strip.to_i
 
-    movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
-
-    BestNetflixMadeMoviesGem::Scraper.scrape_profile_of_movie(movie_object)
-
-    BestNetflixMadeMoviesGem::Scraper.details(movie_object)
-
+    if input.between?(1, 65)
+      movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
+      BestNetflixMadeMoviesGem::Scraper.scrape_profile_of_movie(movie_object)
+      BestNetflixMadeMoviesGem::Scraper.details(movie_object)
+    else
+      puts "I'm not sure I understand."
+      menu
+    end
     view_another
   end
 
