@@ -49,10 +49,9 @@ class BestNetflixMadeMoviesGem::CLI
     if input.between?(1, 65)
       movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
       BestNetflixMadeMoviesGem::Scraper.scrape_profile_of_movie(movie_object)
-      BestNetflixMadeMoviesGem::Scraper.details(movie_object)
+      details(movie_object)
     else
-      puts "I'm not sure I understand."
-      menu
+      puts "I'm not sure I understand"
     end
     view_another
   end
@@ -77,5 +76,26 @@ class BestNetflixMadeMoviesGem::CLI
   def quit
     puts ""
     puts "Thanks for using Best Netflix Made Movies Gem, have a nice day!"
+  end
+
+  def details(movie_object)
+    if movie_object.rating == "" || movie_object.genre == "" || movie_object.director == "" || movie_object.cast == ""
+      puts "#{movie_object.title.upcase}"
+      puts "..............................................."
+      puts ""
+      puts "#{movie_object.synopsis}"
+      puts "- Critics gave it a #{movie_object.avg_critic_rating}"
+      puts "- Audiences gave it a #{movie_object.avg_audience_rating}"
+    else
+      puts "#{movie_object.title.upcase}"
+      puts "..............................................."
+      puts "#{movie_object.synopsis}"
+      puts "- This movie is rated  #{movie_object.rating}"
+      puts "- Genre:  #{movie_object.genre}"
+      puts "- Director:   #{movie_object.director}"
+      puts "- Starring:   #{movie_object.cast}"
+      puts "- Critics gave it a #{movie_object.avg_critic_rating}"
+      puts "- Audiences gave it a #{movie_object.avg_audience_rating}"
+    end
   end
 end
