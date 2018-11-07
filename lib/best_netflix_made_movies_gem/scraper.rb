@@ -18,8 +18,9 @@ class BestNetflixMadeMoviesGem::Scraper
   end
 
   def self.scrape_profile_of_movie(movie_object)
-    movie_profile_doc = Nokogiri::HTML(open(movie_object.movie_url))
-    movie_profile_info = movie_profile_doc.css("#mainColumn")
+    #movie_profile_doc = Nokogiri::HTML(open(movie_object.movie_url))
+    movie_object.movie_profile_doc ||= Nokogiri::HTML(open(movie_object.movie_url))
+    movie_profile_info = movie_object.movie_profile_doc.css("#mainColumn")
       movie_object.avg_critic_rating = movie_profile_info.css("#scoreStats div.superPageFontColor").first.text.gsub(/[^0-9\.\/]+[\s]/, ' ').strip
       movie_object.avg_audience_rating = movie_profile_info.css(".audience-info div[1]/text()").text.chomp.strip
       movie_object.audience_score = movie_profile_info.css(".meter-value .superPageFontColor").text
