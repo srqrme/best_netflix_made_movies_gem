@@ -1,7 +1,3 @@
-
-
-require 'pry'
-
 class BestNetflixMadeMoviesGem::Scraper
 
   def self.scrape_movies_index
