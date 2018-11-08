@@ -29,7 +29,6 @@ class BestNetflixMadeMoviesGem::CLI
       quit
     else
       puts "I'm not sure I understand."
-      menu
     end
   end
 
@@ -49,7 +48,6 @@ class BestNetflixMadeMoviesGem::CLI
     if input.between?(1, 65)
       movie_object = BestNetflixMadeMoviesGem::Movie.find(input)
       BestNetflixMadeMoviesGem::Scraper.scrape_profile_of_movie(movie_object)
-      binding.pry
       details(movie_object)
     else
       puts "I'm not sure I understand"
@@ -77,6 +75,18 @@ class BestNetflixMadeMoviesGem::CLI
   def quit
     puts ""
     puts "Thanks for using Best Netflix Made Movies Gem, have a nice day!"
+  end
+
+  def view_again
+    puts "Would you like to see the full list of movies again? Y/N?"
+    input = gets.chomp.downcase
+    if input == "y"
+      list_movies
+    elsif input == "n"
+      quit
+    else
+      puts "I'm sorry, that's not a valid response. Please enter Y/N:"
+    end
   end
 
   def details(movie_object)

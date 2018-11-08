@@ -26,4 +26,12 @@ class BestNetflixMadeMoviesGem::Movie
   def self.find(m)
     self.all[m-1]
   end
+
+  def avg_critic_rating
+    @avg_critic_rating ||= doc.css("#scoreStats div.superPageFontColor").first.text.gsub(/[^0-9\.\/]+[\s]/, ' ').strip
+  end
+
+  def doc
+    @doc ||= Nokogiri::HTML(open(self.movie_url))
+  end
 end
