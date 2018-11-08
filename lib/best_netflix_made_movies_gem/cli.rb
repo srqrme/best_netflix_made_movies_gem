@@ -67,7 +67,7 @@ class BestNetflixMadeMoviesGem::CLI
     if input == "y"
       run
     elsif input == "n"
-      quit
+      view_again
     else
       puts "I'm not sure I understand."
       view_again
@@ -80,6 +80,7 @@ class BestNetflixMadeMoviesGem::CLI
   end
 
   def view_again
+    puts ""
     puts "Would you like to see the full list of movies again? Y/N?"
     input = gets.chomp.downcase
     if input == "y"
