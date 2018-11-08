@@ -1,5 +1,3 @@
-require 'pry'
-
 class BestNetflixMadeMoviesGem::Movie
 
   attr_accessor :title, :rank, :movie_url, :audience_score, :avg_audience_rating, :avg_critic_rating, :synopsis, :rating, :genre, :director, :cast, :movie_profile_doc

@@ -1,6 +1,4 @@
 #CLI Controller
-require 'pry'
-
 class BestNetflixMadeMoviesGem::CLI
 
   def start
