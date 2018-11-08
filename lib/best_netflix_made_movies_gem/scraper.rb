@@ -1,5 +1,5 @@
 
-require 'open-uri'
+
 require 'pry'
 
 class BestNetflixMadeMoviesGem::Scraper

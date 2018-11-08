@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'open-uri'
 
 
 require_relative "./best_netflix_made_movies_gem/version"
