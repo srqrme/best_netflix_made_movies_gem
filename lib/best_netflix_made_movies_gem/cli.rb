@@ -29,6 +29,7 @@ class BestNetflixMadeMoviesGem::CLI
       quit
     else
       puts "I'm not sure I understand."
+      view_again
     end
   end
 
@@ -51,6 +52,7 @@ class BestNetflixMadeMoviesGem::CLI
       details(movie_object)
     else
       puts "I'm not sure I understand"
+      view_again
     end
     view_another
   end
@@ -68,7 +70,7 @@ class BestNetflixMadeMoviesGem::CLI
       quit
     else
       puts "I'm not sure I understand."
-      view_another
+      view_again
     end
   end
 
